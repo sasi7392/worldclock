@@ -2,7 +2,7 @@ var countriesName ;
 var statesName;
 
 /* Loads country names */
-$.getJSON("data.json",function(result){
+$.getJSON("../script/data.json",function(result){
 	countriesName+="<option value=select_country selected disabled>Select country</option>";
     $.each(result,function(i,country){
         countriesName+="<option value='"+country.code2+"'>"+country.name+"</option>";
@@ -16,7 +16,7 @@ $("#countries").change(function(){
 	var updatedStates;
 	var countryCode = $(this).val();
 	updatedStates+="<option value=select_state selected disabled>Select state</option>";
-	$.getJSON("data.json",function(result){
+	$.getJSON("../script/data.json",function(result){
 
 		for (var i = 0; i < result.length; i++) {
 			if (result[i].code2 == countryCode) {
