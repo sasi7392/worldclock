@@ -1,6 +1,6 @@
 var countriesName ;
 var statesName;
-
+var displayTime;
 /* Loads country names */
 $.getJSON("script/data.json",function(result){
 	countriesName+="<option value=select_country selected disabled>Select country</option>";
@@ -9,6 +9,7 @@ $.getJSON("script/data.json",function(result){
 	});
 	$('#countries').html(countriesName);
 	$('#states').html(statesName);
+	$("#displayTime").html(displayTime);
 });
 
 /* Loads states names on country change */
